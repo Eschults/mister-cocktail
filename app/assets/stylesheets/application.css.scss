@@ -1,3 +1,27 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@import "navbar";
+
+body {
+  margin-top: 50px;
+  background-color: #ddd;
+}
+
+footer {
+  background-color: white;
+  color: rgb(130, 130, 130);
+  height: 150px;
+  padding-top: 50px;
+}
+
+footer a {
+  font-size: 20px;
+  color: rgb(130, 130, 130);
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+

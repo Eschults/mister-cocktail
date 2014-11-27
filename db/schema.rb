@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20141127102632) do
 
   create_table "doses", force: true do |t|
     t.integer  "amount"
-    t.integer  "cockail_id"
+    t.integer  "cocktail_id"
     t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "doses", ["cockail_id"], name: "index_doses_on_cockail_id", using: :btree
+  add_index "doses", ["cocktail_id"], name: "index_doses_on_cocktail_id", using: :btree
   add_index "doses", ["ingredient_id"], name: "index_doses_on_ingredient_id", using: :btree
 
   create_table "ingredients", force: true do |t|
