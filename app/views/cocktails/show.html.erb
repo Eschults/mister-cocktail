@@ -2,6 +2,14 @@
 <h4>You need:</h4>
 <% @cocktail.doses.each do |d| %>
   <p>- <%= d.amount %> <%= d.amount == 1 ? "unit" : "units" %> of <%= d.ingredient.name %>
-  <%= link_to "Delete dose", cocktail_dose_path(@cocktail, d), method: :delete %></p>
+  <%= link_to "Delete dose", dose_path(d), method: :delete %></p>
 <% end %>
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<h4>Add a dose:</h4>
+<%= bootstrap_form_for [@cocktail, @dose], class: "form-inline" do |f| %>
+  <%= f.select :ingredient, [
+    ["ice cubes"], ["mint leaves"], ["lemon"], ["perrier"], ["coke"], ["cane sugar"], ["milk"], ["tonic"], ["redbull"], ["kahlua"], ["rhum"], ["vodka"], ["gin"], ["whisky"], ["jagermeister"]
+    ],
+    class: "form-control" %>
+  <%= f.text_field :amount, class: "form-control" %>
+  <%= f.submit "Add dose", class: "btn btn-primary" %>
+<% end %>
