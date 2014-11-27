@@ -1,5 +1,6 @@
 class Ingredient < ActiveRecord::Base
-  belongs_to :cocktail
+  has_many :doses, dependent: :destroy
+  has_many :cocktails, through: :doses
 
-  validates_presence :name
+  validates :name, presence: :true
 end
