@@ -5,11 +5,8 @@
   <%= link_to "Delete dose", dose_path(d), method: :delete %></p>
 <% end %>
 <h4>Add a dose:</h4>
-<%= bootstrap_form_for [@cocktail, @dose], class: "form-inline" do |f| %>
-  <%= f.select :ingredient, [
-    ["ice cubes"], ["mint leaves"], ["lemon"], ["perrier"], ["coke"], ["cane sugar"], ["milk"], ["tonic"], ["redbull"], ["kahlua"], ["rhum"], ["vodka"], ["gin"], ["whisky"], ["jagermeister"]
-    ],
-    class: "form-control" %>
-  <%= f.text_field :amount, class: "form-control" %>
+<%= bootstrap_form_for [@cocktail, @dose] do |f| %>
+  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%= f.text_field :amount %>
   <%= f.submit "Add dose", class: "btn btn-primary" %>
 <% end %>
