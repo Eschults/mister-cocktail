@@ -1,6 +1,7 @@
 <h1><%= @cocktail.name %></h1>
 <h4>You need:</h4>
 <% @cocktail.doses.each do |d| %>
-  <p>- <%= d.amount %> <%= d.amount == 1 ? "unit" : "units" %> of <%= d.ingredient.name %></p>
+  <p>- <%= d.amount %> <%= d.amount == 1 ? "unit" : "units" %> of <%= d.ingredient.name %>
+  <%= link_to "Delete dose", cocktail_dose_path(@cocktail, d), method: :delete %></p>
 <% end %>
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
