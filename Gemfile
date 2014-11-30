@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
+gem 'paperclip'
+
 gem 'figaro'
 
 gem 'bootstrap-sass', '~> 3.3.1'
