@@ -1,4 +1,6 @@
 <h1><%= @cocktail.name %></h1>
+
+<%= image_tag @cocktail.picture.url(:medium) %>
 <h4>You need:</h4>
 <% @cocktail.doses.each do |d| %>
   <p>- <%= d.amount %> <%= d.amount == 1 ? "unit" : "units" %> of <%= d.ingredient.name %>

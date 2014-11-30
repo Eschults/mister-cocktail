@@ -1,4 +1,5 @@
-<%= bootstrap_form_for(@cocktail) do |f| %>
+<%= bootstrap_form_for(@cocktail, html: { multipart: true }) do |f| %>
   <%= f.text_field :name %>
+  <%= f.file_field :picture %>
   <%= f.submit "Create cocktail", class: "btn btn-primary" %>
 <% end %>
