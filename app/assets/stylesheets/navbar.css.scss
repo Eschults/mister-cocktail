@@ -20,6 +20,7 @@ $btn-bottom-border-width: 3px;
 $btn-bottom-border-color: grey;
 $btn-left-border-width: 0;
 $btn-left-border-color: transparent;
+$btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-border-width - $btn-bottom-border-width) / 2;
 
 // Set your profile picture
 $profile-radius: 50%;
@@ -72,7 +73,6 @@ $profile-border-width: 2px;
   padding-bottom: $vertical-padding;
 }
 
-$btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-border-width - $btn-bottom-border-width) / 2;
 
 #nav-btn {
   line-height: $btn-height;
